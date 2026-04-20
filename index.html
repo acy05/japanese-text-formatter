@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日本語テキスト整形ツール</title>
+    <meta
+      name="description"
+      content="全角半角、改行、空白、箇条書きをまとめて整える日本語テキスト整形ツールです。"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#f4efe7" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="日本語テキスト整形ツール" />
+    <meta
+      property="og:description"
+      content="全角半角、改行、空白、箇条書きをまとめて整える日本語テキスト整形ツールです。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Self-Serve Tool MVP</p>
+        <h1>日本語テキスト整形ツール</h1>
+        <p class="lead">全角半角、改行、空白、箇条書きをまとめて整えます。</p>
+        <p class="note">入力内容は保存されません。無料でそのまま使えます。</p>
+      </section>
+
+      <section class="workspace">
+        <div class="panel">
+          <div class="panel-header">
+            <label for="inputText">入力テキスト</label>
+            <div class="header-actions">
+              <button type="button" id="fillSampleButton" class="ghost">サンプルを入れる</button>
+              <button type="button" id="resetButton" class="ghost">すべて初期化</button>
+            </div>
+          </div>
+          <textarea
+            id="inputText"
+            placeholder="ここに日本語テキストを貼り付けてください"
+            spellcheck="false"
+          ></textarea>
+        </div>
+
+        <div class="panel controls-panel">
+          <div class="panel-header">
+            <span>整形ルール</span>
+          </div>
+          <div class="rule-list">
+            <label><input type="checkbox" id="ruleFullWidth" checked /> 全角英数字を半角にする</label>
+            <label><input type="checkbox" id="ruleSpaces" checked /> 連続する空白を整える</label>
+            <label><input type="checkbox" id="ruleBlankLines" checked /> 連続する空行を整える</label>
+            <label><input type="checkbox" id="ruleBullets" checked /> 箇条書き記号を `-` に統一する</label>
+            <label><input type="checkbox" id="ruleTrimTrailing" checked /> 行末の不要な空白を削除する</label>
+          </div>
+          <div class="primary-actions">
+            <button type="button" id="formatButton" class="primary">整形する</button>
+            <button type="button" id="copyButton" class="secondary">コピーする</button>
+          </div>
+          <p id="statusMessage" class="status" aria-live="polite">
+            テキストを入力すると、ここに整形結果が表示されます
+          </p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <label for="outputText">整形後テキスト</label>
+          </div>
+          <textarea
+            id="outputText"
+            placeholder="ここに整形後のテキストが表示されます"
+            readonly
+            spellcheck="false"
+          ></textarea>
+        </div>
+      </section>
+
+      <section class="info-grid">
+        <article class="info-card">
+          <h2>できること</h2>
+          <ul>
+            <li>全角英数字を半角へ整える</li>
+            <li>改行や空白を整理する</li>
+            <li>箇条書き記号を揃える</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h2>よくある利用例</h2>
+          <ul>
+            <li>AI 出力を貼り付け前に整える</li>
+            <li>SNS 投稿文の改行を直す</li>
+            <li>ブログ下書きの箇条書きを揃える</li>
+            <li>社内文書の空白や行末を整える</li>
+          </ul>
+        </article>
+      </section>
+
+      <footer class="site-footer">
+        <p>入力内容はブラウザ内で処理され、保存しません。</p>
+        <a href="./privacy.html">プライバシー</a>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
